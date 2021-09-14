@@ -17,6 +17,7 @@ module.exports = {
       },
       maxWidth: {
         img: "150px",
+        sidebar: "340px",
       },
       height: {
         container: "600px",

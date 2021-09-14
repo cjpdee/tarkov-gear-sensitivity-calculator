@@ -50,7 +50,7 @@ export default function Home({ armorVests, rigs, helmets, visors }) {
           <div className="flex items-start">
             <div
               id="sidebar"
-              className="w-1/3 flex flex-col justify-between p-4 bg-background text-white border-r-2 h-screen border-outline "
+              className="max-w-sidebar flex flex-col justify-between p-4 bg-background text-white border-r-2 h-screen border-outline "
             >
               <div>
                 <div className="flex justify-between mb-4">
@@ -68,6 +68,7 @@ export default function Home({ armorVests, rigs, helmets, visors }) {
                   setHipfire={setHipfire}
                   aimed={aimed}
                   setAimed={setAimed}
+                  change={calculateTurnModifier(vest, rig, helmet, visor)}
                 />
                 <span className="block text-danger">
                   {calculateTurnModifier(vest, rig, helmet, visor)}
@@ -124,7 +125,7 @@ export default function Home({ armorVests, rigs, helmets, visors }) {
             </div>
             <div
               id="loadout"
-              className="w-2/3 relative h-screen overflow-y-auto"
+              className="w-full relative h-screen overflow-y-auto"
             >
               <LoadoutAccordion
                 {...{

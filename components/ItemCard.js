@@ -15,11 +15,13 @@ export default function ItemCard({ item, folder, selected, onClick }) {
             : " bg-background ")()
       }
     >
-      <img
-        className="outline-2 mb-2 mx-auto block h-full w-auto outline-background max-h-28"
-        src={"/img/" + folder + "/" + getImgName(item.img)}
-        alt=""
-      />
+      <div className="h-28 flex items-center justify-center">
+        <img
+          className="outline-2 mb-2 mx-auto block w-auto outline-background max-h-28"
+          src={"/img/" + folder + "/" + getImgName(item.img)}
+          alt=""
+        />
+      </div>
       <span className="font-bold">
         {item.name.replace(
           /armored|rig|armor|body|vest|concealable|plate carrier|platecarrier|riot helmet|helmet|'s|face shield|face shield-visor|visor/gi,

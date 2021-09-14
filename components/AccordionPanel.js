@@ -1,5 +1,3 @@
-import classnames from "classnames";
-
 import {
   AccordionItem,
   AccordionItemButton,
@@ -17,7 +15,10 @@ export default function AccordionPanel({ children, heading }) {
         </AccordionItemButton>
       </AccordionItemHeading>
       <AccordionItemPanel>
-        <div id="vests" className="grid grid-cols-5  bg-background">
+        <div
+          id="vests"
+          className="grid grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 bg-background"
+        >
           {children}
         </div>
       </AccordionItemPanel>

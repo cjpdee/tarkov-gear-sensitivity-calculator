@@ -1,5 +1,4 @@
 import { Accordion } from "react-accessible-accordion";
-import { getImgName } from "../util/helpers";
 import AccordionPanel from "./AccordionPanel";
 import ItemCard from "./ItemCard";
 
@@ -27,6 +26,8 @@ export default function LoadoutAccordion({
             item={armorVest}
             selected={vest}
             onClick={() => {
+              // reset Armor
+              armorVest === vest ? () => null : setRig(undefined);
               armorVest === vest ? setVest(undefined) : setVest(armorVest);
             }}
           />
@@ -41,6 +42,7 @@ export default function LoadoutAccordion({
             item={chestRig}
             selected={rig}
             onClick={() => {
+              chestRig === rig ? () => null : setVest(undefined);
               chestRig === rig ? setRig(undefined) : setRig(chestRig);
             }}
           />

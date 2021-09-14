@@ -7,8 +7,11 @@ export default function SensitivityInput({
   setHipfire,
   aimed,
   setAimed,
+  change,
 }) {
-  const textboxClass = "border bg-background border-outline p-2";
+  const labelClass =
+    "flex justify-between border-b border-outline items-center block text-2xl";
+  const textboxClass = "w-1/2 bg-background border-outline p-4 text-2xl";
   const saveToLocalStorage = () => {
     window.localStorage.setItem(
       "user_settings",
@@ -16,6 +19,7 @@ export default function SensitivityInput({
     );
   };
 
+  // retrieve the user settings
   useEffect(() => {
     const settingsRaw = window.localStorage.getItem("user_settings");
     const settings = JSON.parse(settingsRaw);
@@ -28,7 +32,7 @@ export default function SensitivityInput({
 
   return (
     <div id="settings" className=" mb-4">
-      <label className="grid grid-cols-2">
+      <label className={labelClass}>
         DPI
         <input
           onChange={(e) => setDpi(e.currentTarget.value)}
@@ -41,7 +45,7 @@ export default function SensitivityInput({
           name="dpi"
         />
       </label>
-      <label className="grid grid-cols-2">
+      <label className={labelClass}>
         Hipfire
         <input
           onChange={(e) => setHipfire(e.currentTarget.value)}
@@ -54,7 +58,7 @@ export default function SensitivityInput({
           name="hipfire"
         />
       </label>
-      <label className="grid grid-cols-2">
+      <label className={labelClass}>
         Aimed
         <input
           onChange={(e) => setAimed(e.currentTarget.value)}
@@ -65,6 +69,16 @@ export default function SensitivityInput({
           className={textboxClass}
           type="number"
           name="aimed"
+        />
+      </label>
+      <label className={labelClass}>
+        % Change
+        <input
+          disabled
+          value={change}
+          className={textboxClass + " text-danger"}
+          type="number"
+          name="change"
         />
       </label>
     </div>
