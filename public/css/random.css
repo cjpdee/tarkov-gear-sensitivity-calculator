@@ -1,0 +1,9 @@
+[data-accordion-component="AccordionItemButton"][aria-expanded="false"] div {
+  /* text-decoration: underline; */
+  transform: rotate(-90deg);
+}
+
+[data-accordion-component="AccordionItemButton"][aria-expanded="true"] div {
+  /* text-decoration: underline; */
+  transform: rotate(90deg);
+}
