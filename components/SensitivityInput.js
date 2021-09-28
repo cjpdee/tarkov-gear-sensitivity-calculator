@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { labelClass, textboxClass } from "../css";
 
 export default function SensitivityInput({
   dpi,
@@ -9,9 +10,6 @@ export default function SensitivityInput({
   setAimed,
   change,
 }) {
-  const labelClass =
-    "flex justify-between border-b border-outline items-center block text-2xl";
-  const textboxClass = "w-1/2 bg-background border-outline p-4 text-2xl";
   const saveToLocalStorage = () => {
     window.localStorage.setItem(
       "user_settings",
@@ -32,6 +30,9 @@ export default function SensitivityInput({
 
   return (
     <div id="settings" className=" mb-4">
+      <label className={labelClass}>
+        <h2 className={textboxClass + " w-full text-center"}>Input</h2>
+      </label>
       <label className={labelClass}>
         DPI
         <input

@@ -16,12 +16,12 @@ export const getNewDpi = (targetEdpi, originalSens) => {
 export const calculateSensitivity = (dpi, sens, turnSpeedModifier) => {
   console.log(dpi, sens, turnSpeedModifier);
   const targetEdpi = getTargetEdpi(dpi, sens, turnSpeedModifier);
-  return getNewIngameSensitivity(targetEdpi, dpi);
+  return getNewIngameSensitivity(targetEdpi, dpi).toFixed(3);
 };
 
 export const calculateDpi = (dpi, sens, turnSpeedModifier) => {
   const targetEdpi = getTargetEdpi(dpi, sens, turnSpeedModifier);
-  return getNewDpi(targetEdpi, sens);
+  return getNewDpi(targetEdpi, sens).toFixed(0);
 };
 
 export const calculateTurnModifier = (vest, helmet, rig, visor) => {
