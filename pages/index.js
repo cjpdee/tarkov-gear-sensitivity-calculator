@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
+import ReactGA from "react-ga";
 import request from "../util/requests/request";
 import SensitivityInput from "../components/SensitivityInput";
 import SensitivityOutput from "../components/SensitivityOutput";
@@ -15,7 +16,7 @@ import {
   mapVisorsData,
 } from "../util/data";
 import ItemCard from "../components/ItemCard";
-import { buttonClass } from "../css";
+import { buttonClass } from "../util/css";
 
 /**
  * todo list
@@ -42,9 +43,19 @@ export default function Home({ armorVests, rigs, helmets, visors }) {
   const [modalIsOpen, setModalIsOpen] = useState(true);
 
   useEffect(() => {
+    // close modal if visited
     if (!!window.localStorage.getItem("user_settings")) {
       setModalIsOpen(false);
     }
+
+    // google analytics
+    ReactGA.initialize(process.env.NEXT_PUBLIC_GA_ID, {
+      debug: true,
+      gaOptions: {
+        siteSpeedSampleRate: 100,
+      },
+    });
+    ReactGA.pageview("/");
   }, []);
 
   return (
