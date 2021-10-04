@@ -1,4 +1,4 @@
-import { buttonClass } from "../css";
+import { buttonClass } from "../util/css";
 
 export default function Modal({ content, isOpen, setIsOpen }) {
   return isOpen ? (
