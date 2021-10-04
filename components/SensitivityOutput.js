@@ -1,4 +1,4 @@
-import { labelClass, textboxClass } from "../css";
+import { labelClass, textboxClass } from "../util/css";
 import { calculateDpi, calculateSensitivity } from "../util/sensitivity";
 
 export default function SensitivityOutput({ dpi, hipfire, aimed, modifier }) {

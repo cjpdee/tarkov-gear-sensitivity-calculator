@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { labelClass, textboxClass } from "../css";
+import { labelClass, textboxClass } from "../util/css";
 
 export default function SensitivityInput({
   dpi,
