@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
+import Script from "next/script";
 import ReactGA from "react-ga";
 
 import request from "../util/requests/request";
@@ -49,17 +50,27 @@ export default function Home({ armorVests, rigs, helmets, visors }) {
       setModalIsOpen(false);
     }
 
-    // google analytics
-    ReactGA.initialize(process.env.NEXT_PUBLIC_GA_ID, {
-      gaOptions: {
-        siteSpeedSampleRate: 100,
-      },
-    });
-    ReactGA.pageview("/");
+    // // google analytics
+    // ReactGA.initialize(process.env.NEXT_PUBLIC_GA_ID, {
+    //   gaOptions: {
+    //     siteSpeedSampleRate: 100,
+    //   },
+    // });
+    // ReactGA.pageview("/");
   }, []);
 
   return (
     <div>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-9N863YLZEE"
+        strategy="afterInteractive"
+      ></Script>
+      <Script id="ga" strategy="afterInteractive">{`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9N863YLZEE');`}</Script>
       <Head>
         <title>Tarkov Gear Sensitivity Calculator</title>
         <meta
