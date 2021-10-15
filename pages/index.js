@@ -51,13 +51,11 @@ export default function Home({ armorVests, rigs, helmets, visors }) {
 
     // google analytics
     ReactGA.initialize(process.env.NEXT_PUBLIC_GA_ID, {
-      debug: true,
       gaOptions: {
         siteSpeedSampleRate: 100,
       },
     });
     ReactGA.pageview("/");
-    console.log("reactga was initialised");
   }, []);
 
   return (
