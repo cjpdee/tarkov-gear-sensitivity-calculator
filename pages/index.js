@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import Script from "next/script";
-import ReactGA from "react-ga";
 
 import request from "../util/requests/request";
 import SensitivityInput from "../components/SensitivityInput";

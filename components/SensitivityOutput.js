@@ -15,7 +15,7 @@ export default function SensitivityOutput({ dpi, hipfire, aimed, modifier }) {
         <input
           disabled
           value={calculateSensitivity(dpi, hipfire, modifier)}
-          className={textboxClass + " text-danger"}
+          className={textboxClass + " text-green-600"}
           type="number"
           name="change"
         />
@@ -25,7 +25,7 @@ export default function SensitivityOutput({ dpi, hipfire, aimed, modifier }) {
         <input
           disabled
           value={calculateSensitivity(dpi, aimed, modifier)}
-          className={textboxClass + " text-danger"}
+          className={textboxClass + " text-green-600"}
           type="number"
           name="change"
         />
@@ -38,7 +38,7 @@ export default function SensitivityOutput({ dpi, hipfire, aimed, modifier }) {
         <input
           disabled
           value={calculateDpi(dpi, hipfire, modifier)}
-          className={textboxClass + " text-danger"}
+          className={textboxClass + " text-green-600"}
           type="number"
           name="change"
         />
