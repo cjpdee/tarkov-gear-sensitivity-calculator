@@ -56,6 +56,7 @@ export default function Home({ armorVests, rigs, helmets, visors }) {
       },
     });
     ReactGA.pageview("/");
+    console.log("reactga was initialised");
   }, []);
 
   return (
