@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import ReactGA from "react-ga";
+
 import request from "../util/requests/request";
 import SensitivityInput from "../components/SensitivityInput";
 import SensitivityOutput from "../components/SensitivityOutput";
@@ -67,6 +68,14 @@ export default function Home({ armorVests, rigs, helmets, visors }) {
           name="description"
           content="Equipment/Armor Mouse Sensitivity Calculator to fix armor affecting turn speed in Escape from Tarkov"
         />
+        <script
+          async
+          src={
+            "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" +
+            process.env.NEXT_PUBLIC_ADSENSE_CLIENT
+          }
+          crossOrigin="anonymous"
+        ></script>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Modal isOpen={modalIsOpen} setIsOpen={setModalIsOpen}></Modal>
