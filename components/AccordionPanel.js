@@ -9,7 +9,7 @@ export default function AccordionPanel({ children, heading }) {
   return (
     <AccordionItem className="relative">
       <AccordionItemHeading>
-        <AccordionItemButton className="flex top-0 justify-between p-4 bg-background hover:bg-highlight transition-colors duration-75 border-b-2 border-outline text-white font-bold">
+        <AccordionItemButton className="flex top-0 justify-between p-4 bg-background hover:bg-highlight transition-colors duration-75 border-b-2 border-outline text-white font-bold cursor-pointer">
           {heading}
           <div>&lt;</div>
         </AccordionItemButton>

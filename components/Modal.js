@@ -3,7 +3,7 @@ import { buttonClass } from "../util/css";
 export default function Modal({ content, isOpen, setIsOpen }) {
   return isOpen ? (
     <aside
-      className="absolute top-0 left-0 w-screen h-screen z-10 flex items-center justify-center text-white font-bender leading-8 tracking-wide"
+      className="absolute top-0 left-0 w-screen h-screen z-10 flex items-center justify-center text-white font-bender leading-8 tracking-wide cursor-pointer"
       style={{
         backgroundColor: "rgba(0,0,0,0.3)",
       }}
@@ -13,7 +13,7 @@ export default function Modal({ content, isOpen, setIsOpen }) {
         if (e.target.getAttribute("js-modal-bg")) setIsOpen(false);
       }}
     >
-      <div className="relative z-20 w-full max-w-3xl p-4 bg-background border-outline border-2">
+      <div className="relative z-20 w-full max-w-3xl p-4 bg-background border-outline border-2 cursor-default">
         <header className="flex justify-between items-center mb-4">
           <h1 className="text-white text-3xl font-bender">
             Tarkov Gear Sensitivity Calculator
