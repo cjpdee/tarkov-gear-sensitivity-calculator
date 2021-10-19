@@ -70,6 +70,11 @@ export default function Home({ armorVests, rigs, helmets, visors }) {
         gtag('js', new Date());
 
         gtag('config', 'G-9N863YLZEE');`}</Script>
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3617395294405861"
+        crossOrigin="anonymous"
+      ></script>
       <Head>
         <title>Tarkov Gear Sensitivity Calculator</title>
         <meta
