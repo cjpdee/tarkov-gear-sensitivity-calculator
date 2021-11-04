@@ -24,12 +24,13 @@ export const calculateDpi = (dpi, sens, turnSpeedModifier) => {
   return getNewDpi(targetEdpi, sens).toFixed(0);
 };
 
-export const calculateTurnModifier = (vest, helmet, rig, visor) => {
+export const calculateTurnModifier = (vest, helmet, rig, visor, facePlate) => {
   const speeds = [
     vest?.turnSpeed,
     helmet?.turnSpeed,
     rig?.turnSpeed,
     visor?.turnSpeed,
+    facePlate?.turnSpeed,
   ].filter((mod) => !!mod);
 
   return speeds.length ? speeds.reduce((a, b) => a + b) : 0;

@@ -59,7 +59,7 @@ export default function SensitivityInput({
           name="hipfire"
         />
       </label>
-      <label className={labelClass}>
+      {/* <label className={labelClass}>
         Aimed
         <input
           onChange={(e) => setAimed(e.currentTarget.value)}
@@ -71,7 +71,7 @@ export default function SensitivityInput({
           type="number"
           name="aimed"
         />
-      </label>
+      </label> */}
       <label className={labelClass}>
         % Change
         <input

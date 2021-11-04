@@ -13,6 +13,7 @@ import { calculateTurnModifier } from "../util/sensitivity";
 import {
   extractTable,
   mapArmorVestsData,
+  mapFacePlatesData,
   mapHelmetsData,
   mapRigsData,
   mapVisorsData,
@@ -32,7 +33,13 @@ import { buttonClass, textboxClass } from "../util/css";
  * Tarkov Turn Speed Calculator
  */
 
-export default function Home({ armorVests, rigs, helmets, visors }) {
+export default function Home({
+  armorVests,
+  rigs,
+  helmets,
+  visors,
+  facePlates,
+}) {
   const [dpi, setDpi] = useState(undefined);
   const [hipfire, setHipfire] = useState(undefined);
   const [aimed, setAimed] = useState(undefined);
@@ -41,10 +48,13 @@ export default function Home({ armorVests, rigs, helmets, visors }) {
   const [helmet, setHelmet] = useState(undefined);
   const [rig, setRig] = useState(undefined);
   const [visor, setVisor] = useState(undefined);
+  const [facePlate, setFacePlate] = useState(undefined);
 
   const [modalIsOpen, setModalIsOpen] = useState(true);
 
   useEffect(() => {
+    console.log(facePlates);
+
     // close modal if visited
     if (!!window.localStorage.getItem("user_settings")) {
       setModalIsOpen(false);
@@ -111,13 +121,25 @@ export default function Home({ armorVests, rigs, helmets, visors }) {
                   setHipfire={setHipfire}
                   aimed={aimed}
                   setAimed={setAimed}
-                  change={calculateTurnModifier(vest, rig, helmet, visor)}
+                  change={calculateTurnModifier(
+                    vest,
+                    rig,
+                    helmet,
+                    visor,
+                    facePlate
+                  )}
                 />
                 <SensitivityOutput
                   dpi={dpi}
                   hipfire={hipfire}
                   aimed={aimed}
-                  modifier={calculateTurnModifier(vest, rig, helmet, visor)}
+                  modifier={calculateTurnModifier(
+                    vest,
+                    rig,
+                    helmet,
+                    visor,
+                    facePlate
+                  )}
                 />
               </div>
 
@@ -162,6 +184,16 @@ export default function Home({ armorVests, rigs, helmets, visors }) {
                     }}
                   />
                 )}
+                {facePlate && (
+                  <ItemCard
+                    item={facePlate}
+                    folder="faceplates"
+                    classes=" hover:bg-danger group"
+                    onClick={() => {
+                      setFacePlate(undefined);
+                    }}
+                  />
+                )}
               </div>
             </div>
             <div
@@ -181,6 +213,7 @@ export default function Home({ armorVests, rigs, helmets, visors }) {
                   rigs,
                   helmets,
                   visors,
+                  facePlates,
                   vest,
                   setVest,
                   rig,
@@ -189,6 +222,8 @@ export default function Home({ armorVests, rigs, helmets, visors }) {
                   setHelmet,
                   visor,
                   setVisor,
+                  facePlate,
+                  setFacePlate,
                 }}
               />
             </div>
@@ -218,6 +253,12 @@ export const getStaticProps = async () => {
         extractTable({
           htmlPage: visorsRes,
           tablePos: 3,
+        })
+      ),
+      facePlates: mapFacePlatesData(
+        extractTable({
+          htmlPage: visorsRes,
+          tablePos: 4,
         })
       ),
     },

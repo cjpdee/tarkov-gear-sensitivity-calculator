@@ -7,6 +7,7 @@ export default function LoadoutAccordion({
   rigs,
   helmets,
   visors,
+  facePlates,
   vest,
   setVest,
   rig,
@@ -15,6 +16,8 @@ export default function LoadoutAccordion({
   setHelmet,
   visor,
   setVisor,
+  facePlate,
+  setFacePlate,
 }) {
   return (
     <Accordion allowZeroExpanded={true}>
@@ -42,6 +45,7 @@ export default function LoadoutAccordion({
             item={chestRig}
             selected={rig}
             onClick={() => {
+              // reset rig
               chestRig === rig ? () => null : setVest(undefined);
               chestRig === rig ? setRig(undefined) : setRig(chestRig);
             }}
@@ -74,6 +78,22 @@ export default function LoadoutAccordion({
             selected={visor}
             onClick={() => {
               thisVisor === visor ? setVisor(undefined) : setVisor(thisVisor);
+            }}
+          />
+        ))}
+      </AccordionPanel>
+
+      <AccordionPanel heading="Face Plates">
+        {facePlates.map((thisFacePlate) => (
+          <ItemCard
+            key={thisFacePlate.name}
+            folder="faceplates"
+            item={thisFacePlate}
+            selected={facePlate}
+            onClick={() => {
+              thisFacePlate === facePlate
+                ? setFacePlate(undefined)
+                : setFacePlate(thisFacePlate);
             }}
           />
         ))}

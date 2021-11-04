@@ -20,7 +20,7 @@ export default function SensitivityOutput({ dpi, hipfire, aimed, modifier }) {
           name="change"
         />
       </label>
-      <label className={labelClass}>
+      {/* <label className={labelClass}>
         Aimed
         <input
           disabled
@@ -29,10 +29,11 @@ export default function SensitivityOutput({ dpi, hipfire, aimed, modifier }) {
           type="number"
           name="change"
         />
-      </label>
+      </label> */}
       <label className={labelClass}>
-        <h2 className={textboxClass + " w-full text-center"}>New DPI</h2>
+        <h2 className={textboxClass + " w-full text-center"}>New DPI*</h2>
       </label>
+
       <label className={labelClass}>
         DPI
         <input
@@ -43,6 +44,10 @@ export default function SensitivityOutput({ dpi, hipfire, aimed, modifier }) {
           name="change"
         />
       </label>
+      <p className="text-sm my-4 text-danger">
+        *You don't need to change DPI if you have changed sensitivity ingame -
+        it's either/or
+      </p>
     </div>
   );
 }

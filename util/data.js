@@ -108,3 +108,19 @@ export const mapVisorsData = (tableMatrix) =>
       blindnessProtection: row[9] || null,
     }))
     .filter((row) => !!row.name && !!row.img);
+
+export const mapFacePlatesData = (tableMatrix) =>
+  tableMatrix
+    .map((row) => ({
+      img: extractImageAlt(row),
+      name: row[1],
+      armorClass: parseInt(row[2]),
+      armorSegments: row[4] || null,
+      durability: parseInt(row[5]),
+      ricochetChance: null,
+      movementSpeed: parseFloat(row[6]),
+      turnSpeed: parseFloat(row[7]),
+      ergonomics: parseFloat(row[8]),
+      soundReduction: row[9] || null,
+    }))
+    .filter((row) => !!row.name && !!row.img);
