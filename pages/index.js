@@ -71,25 +71,20 @@ export default function Home({
 
   return (
     <div>
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3617395294405861"
-        crossOrigin="anonymous"
-      ></script>
       <Head>
         <title>Tarkov Gear Sensitivity Calculator</title>
         <meta
           name="description"
           content="Equipment/Armor Mouse Sensitivity Calculator to fix armor affecting turn speed in Escape from Tarkov"
         />
-        <script
+        {/* <script
           async
           src={
             "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" +
             process.env.NEXT_PUBLIC_ADSENSE_CLIENT
           }
           crossOrigin="anonymous"
-        ></script>
+        ></script> */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Modal isOpen={modalIsOpen} setIsOpen={setModalIsOpen}></Modal>
