@@ -7,6 +7,7 @@ import SensitivityInput from "../components/SensitivityInput";
 import SensitivityOutput from "../components/SensitivityOutput";
 import LoadoutAccordion from "../components/LoadoutAccordion";
 import Modal from "../components/Modal";
+import ReactGA from "react-ga";
 
 import { calculateTurnModifier } from "../util/sensitivity";
 import {
