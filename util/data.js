@@ -77,7 +77,7 @@ export const mapRigsData = (tableMatrix) =>
 export const mapHelmetsData = (tableMatrix) =>
   tableMatrix
     .map((row) => {
-      console.log(row);
+      // console.log(row);
       return {
         img: extractImageAlt(row),
         name: row[1] || null,
@@ -111,16 +111,28 @@ export const mapVisorsData = (tableMatrix) =>
 
 export const mapFacePlatesData = (tableMatrix) =>
   tableMatrix
-    .map((row) => ({
-      img: extractImageAlt(row),
-      name: row[1],
-      armorClass: parseInt(row[2]),
-      armorSegments: row[4] || null,
-      durability: parseInt(row[5]),
-      ricochetChance: null,
-      movementSpeed: parseFloat(row[6]),
-      turnSpeed: parseFloat(row[7]),
-      ergonomics: parseFloat(row[8]),
-      soundReduction: row[9] || null,
-    }))
+    .map((row) => {
+      console.log(
+        row,
+        row[1],
+        row[1] === "Tac-Kek Heavy Trooper mask\n",
+        row[7],
+        row[8]
+      );
+      return {
+        img: extractImageAlt(row),
+        name: row[1],
+        armorClass: parseInt(row[2]),
+        armorSegments: row[4] || null,
+        durability: parseInt(row[5]),
+        ricochetChance: null,
+        movementSpeed: parseFloat(row[6]),
+        turnSpeed:
+          row[1] === "Tac-Kek Heavy Trooper mask\n"
+            ? parseFloat(row[8])
+            : parseFloat(row[7]), // really fucking stupid edge case. consider doing the scraping properly?\
+        ergonomics: parseFloat(row[8]),
+        soundReduction: row[9] || null,
+      };
+    })
     .filter((row) => !!row.name && !!row.img);
