@@ -7,7 +7,7 @@ export const extractTable = ({ htmlPage, tablePos }) => {
     .map((row) =>
       row.map((datum) =>
         datum.replace(
-          /<td>|<\/td>|<th>|<\/th>|<font color="red">|font color="yellow">|<\/font>|<a(.*?)>|<\/a>/gms,
+          /<td>|<\/td>|<th>|<\/th>|<font color="red">|<font color="yellow">|<font color="green">|<\/font>|<a(.*?)>|<\/a>|\\n/gms,
           ""
         )
       )
@@ -76,19 +76,22 @@ export const mapRigsData = (tableMatrix) =>
 
 export const mapHelmetsData = (tableMatrix) =>
   tableMatrix
-    .map((row) => ({
-      img: extractImageAlt(row),
-      name: row[1] || null,
-      armorClass: parseInt(row[2]),
-      armorSegments: row[3] || null,
-      durability: parseInt(row[4]),
-      ricochetChance: row[5] || null,
-      movementSpeed: parseFloat(row[6]),
-      turnSpeed: parseFloat(row[7]),
-      ergonomics: parseFloat(row[8]),
-      soundReduction: row[9] || null,
-      blocksHeadset: row[10] === "Yes",
-    }))
+    .map((row) => {
+      console.log(row);
+      return {
+        img: extractImageAlt(row),
+        name: row[1] || null,
+        armorClass: parseInt(row[2]),
+        armorSegments: row[3] || null,
+        durability: parseInt(row[4]),
+        ricochetChance: null, // isn't appearing in results for some reason
+        movementSpeed: parseFloat(row[5]),
+        turnSpeed: parseFloat(row[6]),
+        ergonomics: parseFloat(row[7]),
+        soundReduction: row[8] || null,
+        blocksHeadset: row[9] === "Yes",
+      };
+    })
     .filter((row) => !!row.name && !!row.img);
 
 export const mapVisorsData = (tableMatrix) =>
