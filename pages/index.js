@@ -18,7 +18,7 @@ import {
   mapVisorsData,
 } from "../util/data";
 import ItemCard from "../components/ItemCard";
-import { buttonClass } from "../util/css";
+import { buttonClass, textboxClass } from "../util/css";
 
 /**
  * todo list
@@ -83,12 +83,12 @@ export default function Home({ armorVests, rigs, helmets, visors }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Modal isOpen={modalIsOpen} setIsOpen={setModalIsOpen}></Modal>
-      <main className="border-box flex items-center justify-center h-screen w-screen overflow-hidden font-bender box-border">
+      <main className="border-box flex items-center justify-center h-screen w-screen overflow-x-hidden sm:overflow-hidden font-bender box-border">
         <div className="w-full h-full max-h-screen max-w-screen bg-background">
-          <div className="flex items-start">
+          <div className="flex items-start flex-col sm:flex-row">
             <div
               id="sidebar"
-              className="max-w-sidebar flex flex-col justify-between p-4 bg-background text-white border-r-2 h-screen border-outline overflow-y-auto "
+              className="sm:max-w-sidebar w-full flex flex-col justify-between p-4 bg-background text-white border-r-2 sm:h-screen border-outline overflow-y-auto "
             >
               <div>
                 <div className="flex justify-between mb-4">
@@ -166,8 +166,15 @@ export default function Home({ armorVests, rigs, helmets, visors }) {
             </div>
             <div
               id="loadout"
-              className="w-full relative h-screen overflow-y-auto"
+              className="w-full relative sm:h-screen sm:overflow-y-auto"
             >
+              <h2
+                className={
+                  textboxClass + " text-white w-full text-center sm:hidden"
+                }
+              >
+                Gear
+              </h2>
               <LoadoutAccordion
                 {...{
                   armorVests,
