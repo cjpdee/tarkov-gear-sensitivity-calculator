@@ -45,8 +45,8 @@ export default function SensitivityOutput({ dpi, hipfire, aimed, modifier }) {
         />
       </label>
       <p className="text-sm my-4 text-danger">
-        *You don't need to change DPI if you have changed sensitivity ingame -
-        it's either/or
+        {`*You don't need to change DPI if you have changed sensitivity ingame -
+        it's either/or`}
       </p>
     </div>
   );
