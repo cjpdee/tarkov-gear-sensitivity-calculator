@@ -228,6 +228,7 @@ export default function Home({
                 slot="3901455053"
                 style={{
                   width: 200,
+                  height: 600,
                 }}
                 // responsive="true"
                 // format="auto"
@@ -242,6 +243,7 @@ export default function Home({
             slot="4093026747"
             style={{
               height: 150,
+              width: 500,
             }}
             // responsive="true"
             // format="auto"
