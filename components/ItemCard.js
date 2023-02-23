@@ -4,7 +4,7 @@ export default function ItemCard({ item, folder, selected, onClick, classes }) {
   return (
     <button
       onClick={() => {
-        console.log(item);
+        // console.log(item);
         onClick && onClick();
       }}
       className={

@@ -41,43 +41,46 @@ const extractImageAlt = (row) => {
 
 export const mapArmorVestsData = (tableMatrix) => {
   return tableMatrix
-    .map((row) => ({
-      img: extractImageAlt(row),
-      name: row[1] || null,
-      class: parseInt(row[2]),
-      material: row[3] || null,
-      armorZones: row[4] || null,
-      durability: parseInt(row[5]),
-      effectiveDurability: parseInt(row[6]),
-      movementSpeed: parseFloat(row[7]),
-      turnSpeed: parseFloat(row[8]),
-      ergonomics: parseInt(row[9]),
-    }))
+    .map((row) => {
+      return {
+        img: extractImageAlt(row),
+        name: row[1] || null,
+        class: parseInt(row[2]),
+        material: row[3] || null,
+        armorZones: row[4] || null,
+        durability: parseInt(row[5]),
+        effectiveDurability: parseInt(row[6]),
+        movementSpeed: parseFloat(row[7]),
+        turnSpeed: parseFloat(row[8]),
+        ergonomics: parseInt(row[9]),
+      };
+    })
     .filter((row) => !!row.name && !!row.img);
 };
 
 export const mapRigsData = (tableMatrix) =>
   tableMatrix
-    .map((row) => ({
-      img: extractImageAlt(row),
-      name: row[1],
-      layout: null,
-      slots: parseInt(row[3]),
-      armorClass: parseInt(row[4]),
-      material: row[5],
-      armorZones: row[6],
-      durability: parseInt(row[7]),
-      effectiveDurability: parseInt(row[8]),
-      movementSpeed: parseFloat(row[9]),
-      turnSpeed: parseFloat(row[10]),
-      ergonomics: parseFloat(row[11]),
-    }))
+    .map((row) => {
+      return {
+        img: extractImageAlt(row),
+        name: row[1],
+        layout: null,
+        slots: parseInt(row[3]),
+        armorClass: parseInt(row[4]),
+        material: row[5],
+        armorZones: row[6],
+        durability: parseInt(row[7]),
+        effectiveDurability: parseInt(row[8]),
+        movementSpeed: parseFloat(row[9]),
+        turnSpeed: parseFloat(row[10]),
+        ergonomics: parseFloat(row[11]),
+      };
+    })
     .filter((row) => !!row.name && !!row.img);
 
 export const mapHelmetsData = (tableMatrix) =>
   tableMatrix
     .map((row) => {
-      // console.log(row);
       return {
         img: extractImageAlt(row),
         name: row[1] || null,
@@ -96,29 +99,32 @@ export const mapHelmetsData = (tableMatrix) =>
 
 export const mapVisorsData = (tableMatrix) =>
   tableMatrix
-    .map((row) => ({
-      img: extractImageAlt(row),
-      name: row[1],
-      armorClass: parseInt(row[2]),
-      armorSegments: row[4] || null,
-      durability: parseInt(row[5]),
-      ricochetChance: row[6] || null,
-      turnSpeed: parseFloat(row[7]),
-      ergonomics: parseFloat(row[8]),
-      blindnessProtection: row[9] || null,
-    }))
+    .map((row) => {
+      console.log(row);
+      return {
+        img: extractImageAlt(row),
+        name: row[1],
+        armorClass: parseInt(row[2]),
+        armorSegments: row[4] || null,
+        durability: parseInt(row[5]),
+        ricochetChance: row[6] || null,
+        turnSpeed: parseFloat(row[7]),
+        ergonomics: parseFloat(row[8]),
+        blindnessProtection: row[9] || null,
+      };
+    })
     .filter((row) => !!row.name && !!row.img);
 
 export const mapFacePlatesData = (tableMatrix) =>
   tableMatrix
     .map((row) => {
-      console.log(
-        row,
-        row[1],
-        row[1] === "Tac-Kek Heavy Trooper mask\n",
-        row[7],
-        row[8]
-      );
+      // console.log(
+      //   row,
+      //   row[1],
+      //   row[1] === "Tac-Kek Heavy Trooper mask\n",
+      //   row[7],
+      //   row[8]
+      // );
       return {
         img: extractImageAlt(row),
         name: row[1],

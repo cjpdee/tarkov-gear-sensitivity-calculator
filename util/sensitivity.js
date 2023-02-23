@@ -14,7 +14,7 @@ export const getNewDpi = (targetEdpi, originalSens) => {
 };
 
 export const calculateSensitivity = (dpi, sens, turnSpeedModifier) => {
-  console.log(dpi, sens, turnSpeedModifier);
+  // console.log(dpi, sens, turnSpeedModifier);
   const targetEdpi = getTargetEdpi(dpi, sens, turnSpeedModifier);
   return getNewIngameSensitivity(targetEdpi, dpi).toFixed(3);
 };

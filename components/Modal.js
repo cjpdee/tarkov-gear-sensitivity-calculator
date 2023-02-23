@@ -9,7 +9,7 @@ export default function Modal({ content, isOpen, setIsOpen }) {
       }}
       js-modal-bg="true"
       onClick={(e) => {
-        console.log(e.target, e.target.getAttribute("js-modal-bg"));
+        // console.log(e.target, e.target.getAttribute("js-modal-bg"));
         if (e.target.getAttribute("js-modal-bg")) setIsOpen(false);
       }}
     >

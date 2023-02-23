@@ -53,7 +53,7 @@ export default function Home({
   const [modalIsOpen, setModalIsOpen] = useState(true);
 
   useEffect(() => {
-    console.log(facePlates);
+    // console.log(facePlates);
 
     // close modal if visited
     if (!!window.localStorage.getItem("user_settings")) {

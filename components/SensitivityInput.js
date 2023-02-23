@@ -31,7 +31,9 @@ export default function SensitivityInput({
   return (
     <div id="settings" className=" mb-4">
       <label className={labelClass}>
-        <h2 className={textboxClass + " w-full text-center"}>Input</h2>
+        <h2 className={textboxClass + " w-full text-center"}>
+          Normal sensitivity (no gear)
+        </h2>
       </label>
       <label className={labelClass}>
         DPI
