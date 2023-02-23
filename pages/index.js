@@ -249,8 +249,9 @@ export default function Home({
           <Adsense.Google
             client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT}
             slot="4093026747"
-            // style={{
-            // }}
+            style={{
+              display: "block",
+            }}
             responsive="true"
             // format="auto"
           />
