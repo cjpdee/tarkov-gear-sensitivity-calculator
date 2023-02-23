@@ -226,8 +226,11 @@ export default function Home({
               <Adsense.Google
                 client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT}
                 slot="3901455053"
-                responsive="true"
-                format="auto"
+                style={{
+                  width: 200,
+                }}
+                // responsive="true"
+                // format="auto"
               />
             </div>
           </div>
@@ -237,8 +240,11 @@ export default function Home({
           <Adsense.Google
             client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT}
             slot="4093026747"
-            responsive="true"
-            format="auto"
+            style={{
+              height: 150,
+            }}
+            // responsive="true"
+            // format="auto"
           />
         </div>
       </main>
