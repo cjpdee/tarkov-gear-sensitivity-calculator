@@ -8,6 +8,7 @@ import SensitivityOutput from "../components/SensitivityOutput";
 import LoadoutAccordion from "../components/LoadoutAccordion";
 import Modal from "../components/Modal";
 import ReactGA from "react-ga";
+import Adsense from "react-adsense";
 
 import { calculateTurnModifier } from "../util/sensitivity";
 import {
@@ -53,8 +54,6 @@ export default function Home({
   const [modalIsOpen, setModalIsOpen] = useState(true);
 
   useEffect(() => {
-    // console.log(facePlates);
-
     // close modal if visited
     if (!!window.localStorage.getItem("user_settings")) {
       setModalIsOpen(false);
@@ -77,18 +76,18 @@ export default function Home({
           name="description"
           content="Equipment/Armor Mouse Sensitivity Calculator to fix armor affecting turn speed in Escape from Tarkov"
         />
-        {/* <script
+        <script
           async
           src={
             "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" +
             process.env.NEXT_PUBLIC_ADSENSE_CLIENT
           }
           crossOrigin="anonymous"
-        ></script> */}
+        ></script>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Modal isOpen={modalIsOpen} setIsOpen={setModalIsOpen}></Modal>
-      <main className="border-box flex items-center justify-center h-screen w-screen overflow-x-hidden sm:overflow-hidden font-bender box-border">
+      <main className="border-box flex flex-col items-center justify-center h-screen w-screen overflow-x-hidden sm:overflow-hidden font-bender box-border">
         <div className="w-full h-full max-h-screen max-w-screen bg-background">
           <div className="flex items-start flex-col sm:flex-row">
             <div
@@ -222,7 +221,21 @@ export default function Home({
                 }}
               />
             </div>
+            <div className="flex flex-col">
+              {/* Vertical ads */}
+              <Adsense.Google
+                client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT}
+                slot="3901455053"
+              />
+            </div>
           </div>
+        </div>
+        <div className="flex">
+          {/* Horizontal ads */}
+          <Adsense.Google
+            client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT}
+            slot="4093026747"
+          />
         </div>
       </main>
     </div>
