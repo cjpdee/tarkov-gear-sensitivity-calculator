@@ -251,7 +251,7 @@ export default function Home({
             slot="4093026747"
             style={{
               display: "block",
-              width: "100%",
+              width: 300,
             }}
             responsive="true"
             format="auto"
