@@ -88,19 +88,11 @@ export default function Home({
       </Head>
       <Modal isOpen={modalIsOpen} setIsOpen={setModalIsOpen}></Modal>
       <main className="border-box flex flex-col items-center justify-start h-screen w-screen overflow-x-hidden sm:overflow-hidden max-w-full font-bender box-border">
-        <div
-          className="w-full h-full max-w-screen bg-background"
-          style={{
-            maxHeight: "calc(100vh - 100px)",
-          }}
-        >
+        <div className="w-full h-full max-w-screen bg-background">
           <div className="flex items-start flex-col sm:flex-row">
             <div
               id="sidebar"
               className="sm:max-w-sidebar w-full flex flex-col justify-between p-4 bg-background text-white border-r-2 sm:h-screen border-outline overflow-y-auto "
-              style={{
-                maxHeight: "calc(100vh - 100px)",
-              }}
             >
               <div>
                 <div className="flex justify-between mb-4">
@@ -246,7 +238,7 @@ export default function Home({
         </div>
         <div className="flex">
           {/* Horizontal ads */}
-          <Adsense.Google
+          {/* <Adsense.Google
             client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT}
             slot="4093026747"
             style={{
@@ -255,7 +247,7 @@ export default function Home({
             }}
             responsive="true"
             format="auto"
-          />
+          /> */}
         </div>
       </main>
     </div>
